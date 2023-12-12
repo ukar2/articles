@@ -29,6 +29,8 @@ public abstract class BaseBO implements Serializable, Comparable<BaseBO> {
     protected LocalDateTime validTo;
 
     protected BaseBO() {
+        // Noncompliant - constructor is empty.
+        // Default constructor is recommended for some frameworks
     }
 
     public Long getId() {
