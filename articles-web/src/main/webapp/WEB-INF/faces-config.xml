@@ -3,5 +3,20 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
                                   https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_4_0.xsd">
-
+    <application>
+        <resource-bundle>
+            <base-name>articles</base-name>
+            <var>rsc</var>
+        </resource-bundle>
+        <locale-config>
+            <default-locale>en</default-locale>
+            <supported-locale>ru</supported-locale>
+            <supported-locale>de</supported-locale>
+        </locale-config>
+        <el-resolver>org.primefaces.application.exceptionhandler.PrimeExceptionHandlerELResolver</el-resolver>
+    </application>
+    <factory>
+        <exception-handler-factory>org.primefaces.application.exceptionhandler.PrimeExceptionHandlerFactory
+        </exception-handler-factory>
+    </factory>
 </faces-config>
