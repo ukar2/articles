@@ -1,9 +1,20 @@
 package net.softwaredevelopment.bo;
 
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import net.softwaredevelopment.articles.base.BaseBO;
 
 @Entity
-@Table(name = "Account", schema = "k39752uz_articlesdb")
+@Table(name = "Account", schema = "k39752uz_iam")
+@NamedQuery(name = "Account.findAllAccounts", query = "SELECT a FROM Account a")
+@NamedQuery(name = "Account.findByUserLoginName", query = "SELECT a FROM Account a WHERE a.user.loginName = :LOGIN_NAME")
+@Getter
+@Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = true)
+@ToString(callSuper = true)
 public class Account extends BaseBO {
 
     @Column(name = "name")

@@ -1,13 +1,22 @@
 package net.softwaredevelopment.bo;
 
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import net.softwaredevelopment.articles.base.BaseBO;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "User", schema = "k39752uz_articlesdb")
+@Table(name = "User", schema = "k39752uz_iam")
 @NamedQuery(name = "User.findAllUsers", query = "SELECT u FROM User u")
+@Getter
+@Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = true)
+@ToString(callSuper = true)
 public class User extends BaseBO {
 
     private Boolean blocked = false;
@@ -29,62 +38,6 @@ public class User extends BaseBO {
     public User() {
         // Noncompliant - constructor is empty.
         // Default constructor is recommended for some frameworks
-    }
-
-    public Boolean getBlocked() {
-        return blocked;
-    }
-
-    public void setBlocked(Boolean blocked) {
-        this.blocked = blocked;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getLoginName() {
-        return loginName;
-    }
-
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
-    }
-
-    public String getForename() {
-        return forename;
-    }
-
-    public void setForename(String forename) {
-        this.forename = forename;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Set<Account> getAccountSet() {
-        return accountSet;
-    }
-
-    public void setAccountSet(Set<Account> accountSet) {
-        this.accountSet = accountSet;
     }
 
     public boolean addAccount(Account account) {

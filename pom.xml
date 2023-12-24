@@ -8,6 +8,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>articles-entities</module>
+        <module>articles-dto</module>
+        <module>articles-base</module>
+        <module>articles-web</module>
     </modules>
 
     <properties>
@@ -17,4 +20,19 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.hibernate.orm</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>6.2.13.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.28</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
